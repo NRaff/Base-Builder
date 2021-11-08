@@ -39,9 +39,8 @@ export function Tables() {
       overflow="hidden"
       display="flex"
       flexDirection="column"
-      alignItems="center"
+      alignItems="top"
       justifyContent="left"
-      // height="100%"
     >
       {tableNames}
     </Box>
