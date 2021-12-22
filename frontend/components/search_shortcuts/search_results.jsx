@@ -1,5 +1,6 @@
 import {
-  Box
+  Box,
+  useBase
 } from '@airtable/blocks/ui'
 import { SearchItem } from './search_item'
 import React from 'react'

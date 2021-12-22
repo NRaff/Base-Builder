@@ -9,9 +9,9 @@ import {
   Input,
   ConfirmationDialog,
 } from '@airtable/blocks/ui';
-import React, {useState} from 'react';
-import { Tables } from './components/tables';
-import {CreateSchema} from './components/createSchema';
+import React from 'react';
+import { Tables } from './components/table_list/tables';
+import { SearchContainer } from './components/search_shortcuts/search_container';
 
 function BaseBuilderApp() {
     const base = useBase();
@@ -29,7 +29,7 @@ function BaseBuilderApp() {
         height="100vh"
       >
         {Tables()}
-        {CreateSchema()}
+        {SearchContainer()}
       </Box>
       
     );

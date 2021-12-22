@@ -2,7 +2,6 @@ import React from "react";
 import { useState } from "react";
 import {
   Box,
-  useBase,
   Input
 } from '@airtable/blocks/ui';
 import { SearchResults } from "./search_results";
