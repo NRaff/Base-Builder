@@ -26,7 +26,6 @@ export function Tables() {
       display="flex"
       flexDirection="column"
       alignItems="top"
-      // justifyContent="top"
     >
       {tableNames}
     </Box>
