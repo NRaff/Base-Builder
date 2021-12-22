@@ -20,7 +20,7 @@ export function SearchItem({cmd}) {
       border="thick"
       borderRadius="default"
       backgroundColor="lightGray1"
-      padding={2}
+      padding={1}
       width="100%"
       overflow="scroll"
       display="flex"

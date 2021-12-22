@@ -14,7 +14,6 @@ export function SearchResults({shortcuts}) {
     <Box
       border="none"
       backgroundColor="lightGray3"
-      padding={1}
       width="100%"
       height={200}
       overflow="hidden"

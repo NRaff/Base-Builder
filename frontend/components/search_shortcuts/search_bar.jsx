@@ -22,15 +22,29 @@ export function SearchBar({shortcuts}) {
   }
 
   return (
-    <section>
+    <Box
+      as="section"
+      border="none"
+      backgroundColor="lightGray3"
+      width="100%"
+      height={200}
+      overflow="scroll"
+      display="flex"
+      flexDirection="column"
+      alignItems="center"
+      justifyContent="left"
+      height="100%"
+      padding={1}
+    >
       <Input
         value={searched}
         onChange={handleSearch.bind(this)}
         placeholder="/table or /field etc.."
         size="large"
         width="100%"
+        marginBottom={1}
       />
       <SearchResults shortcuts={results} />
-    </section>
+    </Box>
   )
 }
