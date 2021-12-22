@@ -5,18 +5,20 @@ import {
 import {
   Input,
   Text,
-  ConfirmationDialog,
 } from '@airtable/blocks/ui';
+import { cmds } from '../util/shortcuts';
+import { SearchItem } from './search/search_item';
 import React, { useState } from 'react';
 
 export function CreateSchema() {
   const [value, setValue] = useState("");
-
-  const cmds = ['table', '/field', '/view']
   const base = useBase();
-
   const tables = base.tables.map((table) => {
-    return table.name
+    return {
+      name: table.name,
+      id: table.id,
+      type: "Table"
+    }
   });
 
   const userCmds = cmds.concat(tables)
@@ -25,9 +27,9 @@ export function CreateSchema() {
 
   function handleEventSearch(e) {
     setValue(e.target.value)
-    let remainingCmds = userCmds.filter((cmd) => {
-      let searched = e.target.value.toLowerCase();
-      let actualCmd = cmd.toLowerCase();
+    const remainingCmds = userCmds.filter((cmd) => {
+      const searched = e.target.value.toLowerCase();
+      const actualCmd = cmd.name.toLowerCase();
       return actualCmd.includes(searched);
     })
     setCmds(remainingCmds);
@@ -35,22 +37,7 @@ export function CreateSchema() {
 
   let allCmds = userShortcuts.map((cmd) => {
     return (
-      <Box
-        border="thick"
-        borderRadius="default"
-        backgroundColor="lightGray1"
-        padding={2}
-        width="100%"
-        height={200}
-        overflow="hidden"
-        display="flex"
-        alignItems="center"
-        justifyContent="left"
-        height="100%"
-      >
-        <Text>{cmd}</Text>
-      </Box>
-
+      <SearchItem cmd={cmd} />
     )
   })
   
