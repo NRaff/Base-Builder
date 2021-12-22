@@ -5,27 +5,13 @@ import {
   Icon,
   Text
 } from '@airtable/blocks/ui';
+import { TableItem } from './table_item';
 
 export function Tables() {
   const base = useBase();
   const tableNames = base.tables.map((table, idx) => {
     return (
-      <Box
-        border="thick"
-        borderRadius="default"
-        backgroundColor="lightGray1"
-        padding={2}
-        width="100%"
-        height={200}
-        overflow="hidden"
-        display="flex"
-        alignItems="center"
-        justifyContent="left"
-        height="100%"
-      >
-        <Icon name="grid" size={16} margin="5px"/>
-        <Text key={idx}>{table.name}</Text>
-      </Box>
+      <TableItem table={table} />
     )
   })
 
@@ -36,11 +22,11 @@ export function Tables() {
       padding={1}
       width={200}
       height="100%"
-      overflow="hidden"
+      overflow="scroll"
       display="flex"
       flexDirection="column"
       alignItems="top"
-      justifyContent="left"
+      // justifyContent="top"
     >
       {tableNames}
     </Box>

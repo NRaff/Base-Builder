@@ -10,11 +10,10 @@ import {
   ConfirmationDialog,
 } from '@airtable/blocks/ui';
 import React, {useState} from 'react';
-import { Tables } from './tables';
-import {CreateSchema} from './createSchema';
+import { Tables } from './components/tables';
+import {CreateSchema} from './components/createSchema';
 
 function BaseBuilderApp() {
-    // YOUR CODE GOES HERE
     const base = useBase();
     return (
       <Box
@@ -27,6 +26,7 @@ function BaseBuilderApp() {
         flexDirection="row"
         alignItems="top"
         justifyContent="left"
+        height="100vh"
       >
         {Tables()}
         {CreateSchema()}
