@@ -6,9 +6,9 @@ import { SearchItem } from './search_item'
 import React from 'react'
 
 export function SearchResults({shortcuts}) {
-  const allCmds = shortcuts.map((cmd) => {
+  const allCmds = shortcuts.map((cmd, idx) => {
     return (
-      <SearchItem cmd={cmd} />
+      <SearchItem cmd={cmd} idx={idx} />
     )
   })
   return (

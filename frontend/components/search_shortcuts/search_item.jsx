@@ -12,15 +12,22 @@ const iconType = ({type}) => {
       return "grid"
     case "Shortcut":
       return "bolt"
+    default:
+      return "bolt"
   }
 }
 
-export function SearchItem({cmd}) {
+const isActive = idx => {
+  console.log(idx)
+  idx === 0 ? "grayDark1" : "lightGray1"
+}
+
+export function SearchItem({cmd, idx}) {
   return (
     <Box
       border="thick"
       borderRadius="default"
-      backgroundColor="lightGray1"
+      backgroundColor= "lightGray1"//{isActive(idx)}
       padding={1}
       width="100%"
       overflow="scroll"
